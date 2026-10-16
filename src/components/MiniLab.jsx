@@ -36,24 +36,24 @@ export default function MiniLab() {
               <path
                 d="M25 0H0V25"
                 fill="none"
-                stroke="#c1d5a0"
+                stroke="#6e64ce"
                 strokeOpacity=".09"
                 strokeWidth=".5"
               />
             </pattern>
             <linearGradient id="lab-line" x2="1" y2="1">
-              <stop stopColor="#e5ef9b" />
-              <stop offset="1" stopColor="#83b89f" />
+              <stop stopColor="#5951e8" />
+              <stop offset="1" stopColor="#a384df" />
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="400" height="320" fill="url(#lab-grid)" />
-          <path d="M200 15V305 M15 160H385" stroke="#a8bb8b" strokeWidth=".5" strokeOpacity=".2" />
+          <path d="M200 15V305 M15 160H385" stroke="#6e64ce" strokeWidth=".5" strokeOpacity=".2" />
           <path d={path} fill="none" stroke="url(#lab-line)" strokeWidth="1.6" />
           <circle
             cx={200 + Math.sin((phase * Math.PI) / 180) * 118}
             cy="160"
             r="4"
-            fill="#e5ef9b"
+            fill="#5951e8"
           />
         </svg>
         <div className="lab-visual-bottom">
@@ -67,7 +67,7 @@ export default function MiniLab() {
         <div className="eyebrow">
           <span className="status-dot" /> UM MINUTO DE DESCOBERTA
         </div>
-        <h2>
+        <h2 id="lab-title">
           E se você mudar
           <br />
           uma variável?

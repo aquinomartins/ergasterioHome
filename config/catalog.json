@@ -96,7 +96,8 @@
       "description": "Uma galeria interativa para investigar a arquitetura das células.",
       "category": "Ciência",
       "art": "cell",
-      "tags": ["Biologia", "Visualização"]
+      "tags": ["Biologia", "Visualização"],
+      "homepage": "https://cell-architecture-studio-inky.vercel.app"
     },
     "bachianash": {
       "name": "Bachianash",

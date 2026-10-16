@@ -1,151 +1,137 @@
 # Ergastério
 
-Uma Home editorial para conectar arte, ciência, tecnologia e educação. Construída em React, Vite e Three.js; o resultado de produção é um site estático, sem necessidade de servidor Node na hospedagem.
+Home para reunir os experimentos do servidor e os repositórios públicos do GitHub. Interface clara com navegação lateral, ilustração original, busca por temas, cartões e lista. React + Vite no desenvolvimento; PHP 7.4+ para descobrir as pastas na hospedagem.
 
-**O `index.html` da raiz já está compilado e pronto para hospedagem.** Ele incorpora a aplicação, estilos, fontes e ícone. O template de desenvolvimento fica em `development.html`; o Vite o utiliza automaticamente durante desenvolvimento e builds.
+**O `index.html` da raiz já está compilado**, com aplicação, estilos, fontes e ícone incorporados. Ele abre sem Node.js ou pasta `assets`. O template editável é `development.html`; o Vite o utiliza automaticamente.
 
-## Executar
+## Publicar na Superdomínios pelo cPanel
 
-Requer Node.js 24.5 ou mais recente. O ambiente da nuvem já fornece Node 24.
+Como você usa **Code → Download ZIP**, extraia o download e abra a pasta `ergasterioHome-main`. Envie estes **três arquivos de dentro dela** para a raiz do domínio, normalmente `public_html`:
 
-```sh
-cd /workspace/ergasterioHome
-npm ci --cache /tmp/ergasterio-npm
-npm run dev -- --port 5173
+```text
+public_html/
+├── index.html                 ← substituir pela nova Home compilada
+├── projects.php               ← índice automático das pastas
+├── ergasterio-projects.json    ← nomes, descrições e vínculos com GitHub
+├── andante/                   ← preservar os projetos existentes
+├── celulas/
+├── correria/
+├── dashboard/
+├── fusca_engine_demo/
+└── ...
 ```
 
-O cache em `/tmp` evita depender de permissões de escrita no diretório pessoal do ambiente. Em uma máquina própria, `npm ci` também funciona.
+1. Guarde uma cópia dos três arquivos atuais antes de substituí-los.
+2. Substitua os três arquivos **diretamente na raiz do domínio**, ao lado das pastas dos projetos. Deixar a Home somente dentro de `ergasterioHome-main/` não atualiza a página principal.
+3. Use permissões `0644` para arquivos e `0755` para pastas. Preserve as pastas dos experimentos e suas regras de acesso.
+4. Abra `https://ergasterio.com.br/projects.php`. A resposta deve ser um JSON com `schemaVersion`, `scannedAt` e `projects`.
+5. Abra `https://ergasterio.com.br/?v=home-clara`. O painel deve indicar **Índice atualizado**. Se aparecer **Catálogo disponível**, o catálogo inicial funciona, mas a leitura automática das pastas ainda não foi conectada.
 
-```sh
-npm test          # descoberta, curadoria, busca, links e contrato de compra
-npm run test:e2e  # navegação real, celular, radar, trilhas, laboratório e acessibilidade
-npm run build    # gera dist/
-npm run preview -- --port 4173
+O pacote `artifacts/ergasterio-superdominios.zip`, gerado por `npm run package:hosting`, contém esses arquivos e o catálogo auxiliar. No GitHub Actions, o workflow **Gerar pacote para Superdomínios** também disponibiliza os arquivos de publicação em **Artifacts → ergasterio-superdominios**.
+
+Só trocar o `index.html` atualiza o visual e o catálogo inicial. **A descoberta de futuras pastas exige também `projects.php`, PHP habilitado e o arquivo de configuração ao lado da Home.** Não é necessário Node.js, banco de dados ou cron no cPanel.
+
+Se o domínio continuar mostrando o HTML antigo, confira a pasta raiz configurada para o domínio no cPanel e se algum `index.php` anterior está sendo servido antes de `index.html`. Uma resposta HTTP 500 em `projects.php` exige consultar o log de erros PHP/Apache da hospedagem. Esta implementação não altera o `.htaccess` nem corrige os builds internos das experiências existentes.
+
+## Como novas pastas entram automaticamente
+
+O índice lê somente as pastas vizinhas à Home. Uma pasta nova entra quando contém `index.html`, `index.htm`, `index.php`, `app.html`, `demo.html` ou `main.html`. A Home consulta o índice ao abrir, ao voltar à aba e a cada 90 segundos com a aba visível. O botão de atualização faz uma nova consulta imediatamente.
+
+Para refinar o nome, descrição ou endereço de entrada, coloque um manifesto **`ergasterio.project.json` dentro da pasta do projeto**:
+
+```json
+{
+  "public": true,
+  "name": "Meu novo laboratório",
+  "description": "Uma experiência para explorar ideias e descobrir relações.",
+  "category": "Ciência",
+  "entry": "demo.html",
+  "repository": "nome-do-repositorio",
+  "featured": true
+}
 ```
 
-Os testes de navegador usam `/usr/bin/chromium`. Para outra instalação, informe `CHROMIUM_PATH`. Em CI, instale Chromium/Playwright antes de executar a suíte de navegador.
+`repository` recebe apenas o nome de um repositório público do proprietário configurado. Os temas são `Ciência`, `Arte & criação`, `Engenharia`, `Jogos`, `Tecnologia` e `Sociedade`. Sem manifesto, nome e tema recebem valores iniciais automáticos. Use `public: false` para ocultar um projeto. `public: true` também permite exibir um cartão em preparação, sem um botão de acesso, enquanto a entrada não existe.
 
-## O que está implementado
+Pastas ocultas, symlinks, configurações, dependências, uploads, backups e cópias da Home ficam de fora. A lista adicional de exclusões fica em `ergasterio-projects.json`. O endpoint não recebe caminhos pela URL, não escreve arquivos, não executa projetos nem expõe caminhos absolutos do servidor. Não coloque uma entrada pública em diretórios que precisam permanecer privados.
 
-- Composição visual original, ilustrações vetoriais e escultura 3D; fontes incluídas no projeto.
-- Catálogo por temas, busca sem distinção de acentos e páginas de detalhes em diálogos acessíveis.
-- Radar e progresso local, sem cadastro, rastreamento, envio de e-mail ou serviço externo de armazenamento.
-- Trilhas abertas e autoguiadas, com atividades e fontes dos projetos.
-- Laboratório de figuras de Lissajous: duas frequências controláveis demonstram relações entre matemática, arte e música.
-- Destaques com ordem variável a cada dia, pergunta diária e botões “Outro olhar” e “Me surpreenda”. A navegação permanece estável enquanto a pessoa explora.
-- Conteúdo disponível mesmo quando a atualização do catálogo falha. O componente 3D possui alternativa vetorial e respeita a preferência por movimento reduzido.
-- Estrutura para ofertas com preços e checkout externos, sem criar ofertas ou resultados comerciais fictícios.
+As **17 pastas de projetos visíveis na imagem fornecida** já têm nomes, temas e descrições. As versões de JetStream, Mecanismo e Sonic permanecem separadas. `.github`, `.well-known`, `config`, `public`, `scripts` e os downloads `ergasterioHome-*` são arquivos de suporte, não projetos da vitrine.
 
-## Descoberta automática de repositórios
+`nuvens` aparece em preparação porque a verificação pública encontrou uma listagem de arquivos, sem uma entrada executável na raiz. Depois de publicar a aplicação nessa pasta, remova `preparing: true` de seu mapeamento. Outros projetos podem depender de correções próprias: a existência de uma entrada permite indexá-la, mas não comprova que sua aplicação está funcionando.
+
+## Alinhamento com o GitHub
+
+A Home combina o índice do servidor com o catálogo público de `aquinomartins`. Associa nomes equivalentes ou usa o vínculo explícito no manifesto/configuração. Quando encontra o mesmo projeto nas duas fontes, mostra o acesso do servidor e o link ao código no mesmo cartão. Versões locais diferentes são preservadas.
+
+Os mapeamentos iniciais incluem `dashboard → bachianash`, `ergasterio → ergasteriux`, `mecanismo/mecanismo114 → mecanismo-n-114` e `nuvens → Nuvens-Holandesas`. A pasta `celulas` não foi associada por suposição a um dos vários repositórios de células.
+
+**Relacionar o repositório não faz deploy nem sobrescreve pastas.** Cada experiência continua com seu processo de publicação. Este projeto não tem acesso autenticado ao cPanel para sincronizar arquivos de outras aplicações.
 
 ```sh
 npm run sync
 ```
 
-O script consulta todos os repositórios públicos de `aquinomartins`, com paginação. Primeiro usa a API oficial do GitHub. Se ela estiver indisponível, consulta as páginas públicas oficiais. No ambiente da nuvem, o acesso à API está bloqueado e a alternativa pública foi validada. TLS e certificados permanecem verificados.
+O script descobre todos os repositórios públicos, com paginação, usando a API oficial ou as páginas públicas do GitHub como alternativa. Repositórios privados, arquivados e excluídos pela curadoria ficam de fora. A saída é `public/data/repositories.json`; erros preservam a versão anterior. Edite `config/catalog.json` para configurar temas, objetivos, destaques e endereços públicos reais. Forks mantêm links à autoria e à licença de origem.
 
-O catálogo gerado fica em `public/data/repositories.json`. A sincronização usa gravação atômica e falha sem apagar o catálogo anterior quando encontra erro de rede, formato inesperado ou listagem vazia. O navegador recebe uma cópia inicial embutida, consulta o JSON local e, na versão de produção, tenta buscar o feed público configurado em `catalogFeed`. Não consulta a API do GitHub diretamente, não envia credenciais nem o endereço de origem ao feed, e mantém o catálogo disponível se a rede falhar. No desenvolvimento, usa apenas a versão local.
+O workflow `.github/workflows/sync-catalog.yml` atualiza esse catálogo diariamente às 06:17 UTC e permite execução manual. Precisa estar habilitado na branch padrão, com permissão de escrita. O feed público configurado em `catalogFeed` transmite as atualizações à Home publicada. O GitHub pode atrasar agendamentos e a distribuição do feed. Mudanças no design exigem novo build/publicação.
 
-Novos repositórios públicos entram automaticamente. Repositórios privados e arquivados ficam de fora. A categoria inicial é inferida pelo nome, descrição e tópicos; essa classificação é uma sugestão e pode ser refinada editorialmente.
+## Executar e validar
 
-Edite `config/catalog.json` para:
-
-- Alterar `owner`.
-- Excluir projetos em `excluded`. A seleção inicial remove infraestrutura, backups, projetos imobiliários e exercícios antigos para manter o contexto educacional.
-- Definir nome, chamada, descrição, categoria, tags e objetivos em `projects`.
-- Marcar `featured: true` para os destaques.
-- Informar `homepage` com o endereço público real da experiência. Sem esse endereço, o botão identifica e abre o repositório; não inventa uma demonstração.
-- Informar o tipo de ilustração em `art`: `anatomy`, `cell`, `art`, `sound`, `code` ou `network`.
-
-Depois de editar, execute `npm run sync` e `npm run build`. Forks mantêm um aviso de adaptação e um link para consultar autoria e licença no repositório.
-
-### Atualização diária
-
-`.github/workflows/sync-catalog.yml` contém a rotina diária e o acionamento manual pelo GitHub Actions. Ela consulta os projetos, atualiza o JSON e cria um commit quando necessário, utilizando o token temporário nativo do GitHub.
-
-A rotina só começa depois que este código estiver publicado na branch padrão e o workflow estiver habilitado. A configuração do repositório precisa permitir escrita para o workflow. O agendamento está definido para 06:17 UTC, aproximadamente 03:17 em São Paulo; o GitHub pode atrasar execuções agendadas.
-
-Depois da primeira publicação da Home, o feed padrão em `raw.githubusercontent.com/aquinomartins/ergasterioHome/main/public/data/repositories.json` permite receber novos projetos automaticamente, inclusive em hospedagem compartilhada, sem reenviar o site inteiro. O workflow precisa estar ativo e o repositório e esse arquivo devem ser públicos na branch `main`; a distribuição do GitHub pode levar alguns minutos. Ajuste `catalogFeed` se mudar o repositório ou a branch.
-
-Se preferir desativar consultas externas, defina `catalogFeed` como `null`. Nesse caso, a hospedagem precisa reconstruir/publicar o site após os commits de sincronização, ou receber manualmente o novo `dist/`. Alterações no design ou na configuração de produtos sempre exigem novo build e publicação. O workflow não envia arquivos diretamente ao servidor do domínio.
-
-## Ativar produtos educacionais
-
-As duas formações iniciais estão explicitamente em desenvolvimento. O interesse é apenas um marcador local, não uma inscrição nem uma lista de e-mails.
-
-Os produtos estão em `config/products.json`. Para uma oferta real, defina:
-
-```json
-{
-  "id": "id-da-formacao",
-  "category": "CIÊNCIA",
-  "title": "Título real da formação",
-  "description": "Descrição do programa que será entregue.",
-  "status": "available",
-  "priceInCents": 19900,
-  "currency": "BRL",
-  "checkoutUrl": "https://endereco-real-do-seu-checkout"
-}
-```
-
-O valor acima é apenas um exemplo de configuração, não uma oferta exibida. A Home só mostra preço e compra quando a oferta está disponível, o preço é válido e o checkout usa HTTPS. Podem ser usados links de plataformas de pagamento como Hotmart, Stripe ou outra solução já configurada pelo responsável. Não coloque chaves privadas no frontend.
-
-Pagamento, confirmação, acesso ao curso, regras comerciais e entrega devem estar implementados no serviço de checkout/ensino escolhido. Esta Home não simula cobrança, matrícula ou envio de notificações.
-
-## Publicação
-
-### Superdomínios / cPanel
-
-Para reduzir falhas de envio, referências a arquivos ausentes e conflitos com a pasta `assets` do site antigo, use o pacote com JavaScript, estilos e fontes incorporados ao HTML:
+Requer Node.js 24.5+ e PHP 7.4+ para os testes do índice. O desenvolvimento visual não depende de PHP e usa o catálogo inicial quando o endpoint está indisponível.
 
 ```sh
-npm run package:hosting
+npm ci --cache /tmp/ergasterio-npm
+npm run dev -- --port 5173
+npm test                 # catálogo, vínculos, PHP e descoberta por HTTP
+npm run test:e2e         # navegação, celular, descoberta, radar e acessibilidade
+npm run build            # dist/, incluindo o índice PHP e a configuração
+npm run package:hosting  # HTML independente + ZIP, atualiza index.html da raiz
+npm run test:hosting     # testa o HTML gerado com assets externos bloqueados
+npm run test:root        # testa o index.html versionado, servido sem Vite
 ```
 
-O comando gera `artifacts/ergasterio-superdominios.zip` e atualiza também o `index.html` da raiz. Extraia o ZIP diretamente na pasta raiz do domínio no cPanel, depois de guardar uma cópia do HTML atual fora da pasta pública. A estrutura do pacote é `index.html`, `favicon.svg` e `data/repositories.json`; o ZIP define permissões 0644 para arquivos e 0755 para pastas. Também é possível enviar somente o `index.html` da raiz, inclusive a partir do checkout Git do cPanel: ele contém tudo o que a Home precisa para abrir.
+Os testes PHP usam `php` no PATH ou o executável indicado em `PHP_BIN`. No ambiente atual da nuvem, o runtime isolado está em `/workspace/shared/php-runtime/php`, detectado automaticamente pelos testes. Nenhuma configuração PHP do sistema foi alterada. Os testes de navegador usam `/usr/bin/chromium`; informe `CHROMIUM_PATH` se necessário.
 
-Esse `index.html` pode renderizar toda a Home mesmo quando a pasta `assets` está ausente. O catálogo inicial está embutido; a versão de hospedagem consulta diretamente o feed público do GitHub para atualizações e não exige o JSON local. O pacote incorpora também o componente 3D e as fontes, aumentando o tamanho do HTML em troca de simplificar a publicação. O build padrão mantém os arquivos separados para hospedagens com deploy automatizado.
-
-Edite `development.html` e `src/` para desenvolver. Após alterar a interface, execute `npm run package:hosting` e inclua o `index.html` regenerado no commit. Esse HTML gerado não deve ser editado manualmente. O Vite sempre utiliza o template de desenvolvimento antes de compilar, evitando compilar a saída gerada outra vez.
-
-O workflow **Gerar pacote para Superdomínios** executa após pushes para `main`, em pull requests e por acionamento manual. Ele testa o `index.html` versionado em um servidor estático, sem Vite nem arquivos de apoio. No GitHub, abra **Actions → Gerar pacote para Superdomínios → execução concluída → Artifacts → ergasterio-superdominios**. O download contém somente os arquivos de publicação. O ZIP de **Code → Download ZIP** inclui também os fontes; seu `index.html` da raiz agora também está pronto para servir a Home.
+Para testar o pacote completo com descoberta de pastas:
 
 ```sh
-npm run test:hosting
-npm run test:root
+php -S 127.0.0.1:8080 -t dist-hosting
 ```
 
-Essas verificações abrem tanto o build de hospedagem quanto o HTML versionado em um servidor estático que serve apenas esse arquivo. Elas bloqueiam scripts, estilos e fontes externos e validam renderização, busca, radar, laboratório e uso em celular sem atualização do catálogo.
+Coloque pastas de demonstração em `dist-hosting/` e abra o endereço local. Não use `vite preview` para validar PHP: ele serve apenas arquivos estáticos. O scanner deve executar no servidor PHP.
 
-Se uma publicação continuar branca, abra os endereços de JS e CSS indicados no HTML e confira a resposta: 404 indica arquivo ausente; 403 pode indicar permissões ou regras de acesso; uma resposta HTML em lugar de JS/CSS pode indicar redirecionamento ou reescrita no `.htaccess`. Preserve as regras necessárias aos experimentos existentes e confira eventuais políticas de bloqueio de scripts do servidor antes de alterá-las.
+Edite `src/` e `development.html`, depois rode `npm run package:hosting` e inclua o `index.html` regenerado no commit. Ele é saída gerada, não deve ser editado manualmente. O build padrão separa CSS/JS em `assets/`; publique todo o conteúdo de `dist/` se escolher essa variante.
 
-### Build com arquivos separados
+Para um subdiretório, use `npm run build -- --base=/seu-subdiretorio/`. A descoberta considera as pastas ao lado da Home nesse subdiretório; para os projetos mostrados na imagem, publique a Home na raiz do domínio.
 
-Execute `npm run build` e publique **o conteúdo de `dist/`**, incluindo `assets/`, `data/` e `favicon.svg`, na raiz desejada do site. A navegação usa âncoras e não exige regras de fallback de SPA.
+## Experiência e formações
 
-Para um subdiretório:
+- Busca por nome, tema e descrição, sem distinção de acentos; filtro por origem e tema; cartões ou lista.
+- Radar e progresso das trilhas salvos neste navegador, sem cadastro.
+- Destaques variáveis a cada dia, “Outro olhar” e “Me surpreenda”; catálogo completo com ordem estável por padrão.
+- Trilhas autoguiadas e laboratório interativo de figuras de Lissajous.
+- Catálogo inicial embutido para manter a interface acessível quando PHP ou rede falham.
+- Fontes locais, navegação por teclado, diálogos nativos e respeito a movimento reduzido.
 
-```sh
-npm run build -- --base=/seu-subdiretorio/
-```
-
-O projeto não foi publicado em `ergasterio.com.br` durante esta implementação. O domínio e sua hospedagem permanecem sob a administração do proprietário.
+As formações em `config/products.json` estão em desenvolvimento. O lembrete é local, não uma inscrição nem lista de e-mails. A Home só exibe compra quando o produto tem `status: "available"`, preço válido em `priceInCents`, moeda e um `checkoutUrl` HTTPS real. Pagamento, matrícula e entrega pertencem à plataforma de checkout/ensino escolhida. Não coloque chaves privadas no frontend.
 
 ## Estrutura
 
 ```text
-config/                     Curadoria de projetos e ofertas
-index.html                  Home compilada, pronta para servir diretamente
-development.html            Template usado pelo Vite em desenvolvimento e build
-public/data/                Catálogo público gerado
-scripts/sync-repositories.mjs Descoberta e sincronização
-src/App.jsx                 Home, catálogo, trilhas e diálogos
-src/components/             Arte, escultura 3D e laboratório
-src/lib/                    Classificação, busca, variação e compra
-src/styles.css              Sistema visual e responsividade
-src/experiences.css          Laboratório e ajustes editoriais
-tests/                      Verificação funcional e de dados
-.github/workflows/          Atualização diária do catálogo
+index.html                       Home compilada para publicação direta
+projects.php                     Índice das pastas do servidor
+ergasterio-projects.json          Metadados, vínculos e exclusões das pastas
+development.html                 Template de desenvolvimento
+config/                          Curadoria GitHub e produtos
+public/data/repositories.json    Catálogo GitHub gerado
+scripts/                         Sincronização e empacotamento
+src/App.jsx                      Interface, navegação e experiências
+src/hooks/useProjectCatalog.js   Consulta periódica e união dos catálogos
+src/lib/server-catalog.mjs       Vínculos e validação do índice
+src/components/                  Ilustração, diálogos e laboratório
+src/styles.css                   Visual claro e responsividade
+tests/                           PHP/HTTP, dados e navegador
+.github/workflows/               Atualização do catálogo e pacote cPanel
 ```
 
-Use o checkout existente nas tarefas da nuvem; cada tarefa já é isolada. Não crie um Git worktree sem solicitação explícita.
+Use o checkout existente nas tarefas da nuvem; cada tarefa já é isolada. Não crie um Git worktree sem solicitação explícita. Esta alteração não publica arquivos no domínio automaticamente.

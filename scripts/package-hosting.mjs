@@ -25,7 +25,12 @@ async function collect(dir, prefix = '') {
 await collect(source);
 const archive = zipSync(files, { level: 6 });
 const contents = unzipSync(archive);
-if (!contents['index.html'] || !contents['data/repositories.json']) {
+if (
+  !contents['index.html'] ||
+  !contents['data/repositories.json'] ||
+  !contents['projects.php'] ||
+  !contents['ergasterio-projects.json']
+) {
   throw new Error('Pacote de publicação incompleto.');
 }
 await mkdir(targetDir, { recursive: true });

@@ -4,7 +4,6 @@ import '@fontsource-variable/manrope';
 import '@fontsource/ibm-plex-mono/latin-400.css';
 import App from './App.jsx';
 import './styles.css';
-import './experiences.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
