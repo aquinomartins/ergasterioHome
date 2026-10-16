@@ -1,7 +1,7 @@
 {
   "owner": "aquinomartins",
-  "syncedAt": "2026-10-16T05:35:23.356Z",
-  "source": "github-public-pages",
+  "syncedAt": "2026-10-16T11:25:30.378Z",
+  "source": "github-api",
   "projects": [
     {
       "id": "relogio",
@@ -22,7 +22,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/relogio",
-      "updatedAt": "2026-10-15T14:46:28Z",
+      "updatedAt": "2026-10-15T14:46:35Z",
       "isFork": false
     },
     {
@@ -44,7 +44,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/andante",
-      "updatedAt": "2026-10-14T14:54:13Z",
+      "updatedAt": "2026-10-14T14:30:57Z",
       "isFork": false
     },
     {
@@ -66,7 +66,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/mecanismo-n-114",
-      "updatedAt": "2026-10-02T18:30:42Z",
+      "updatedAt": "2026-10-02T18:30:47Z",
       "isFork": false
     },
     {
@@ -78,7 +78,7 @@
       "art": "art",
       "tags": [
         "Arte & criação",
-        "CSS"
+        "Projeto aberto"
       ],
       "objectives": [
         "Conhecer a proposta do projeto",
@@ -86,9 +86,9 @@
         "Acompanhar o desenvolvimento no repositório"
       ],
       "featured": false,
-      "homepage": null,
+      "homepage": "https://www.ibm.com/design/language/",
       "sourceUrl": "https://github.com/aquinomartins/design-language-website",
-      "updatedAt": "2026-09-13T23:16:51Z",
+      "updatedAt": "2026-09-16T14:44:41Z",
       "isFork": true
     },
     {
@@ -110,7 +110,7 @@
       "featured": true,
       "homepage": "https://human-atlas-seven.vercel.app/",
       "sourceUrl": "https://github.com/aquinomartins/human-atlas",
-      "updatedAt": "2026-09-06T23:35:06Z",
+      "updatedAt": "2026-09-07T02:25:22Z",
       "isFork": true
     },
     {
@@ -132,7 +132,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/bachianash",
-      "updatedAt": "2026-08-08T20:11:59Z",
+      "updatedAt": "2026-08-08T20:12:04Z",
       "isFork": false
     },
     {
@@ -154,7 +154,7 @@
       "featured": true,
       "homepage": "https://www.theninthart.com/",
       "sourceUrl": "https://github.com/aquinomartins/theninthart_OFICIAL",
-      "updatedAt": "2026-07-21T02:09:59Z",
+      "updatedAt": "2026-07-22T22:37:18Z",
       "isFork": false
     },
     {
@@ -166,7 +166,7 @@
       "art": "code",
       "tags": [
         "Tecnologia",
-        "TypeScript"
+        "Projeto aberto"
       ],
       "objectives": [
         "Conhecer a proposta do projeto",
@@ -174,9 +174,9 @@
         "Acompanhar o desenvolvimento no repositório"
       ],
       "featured": false,
-      "homepage": null,
+      "homepage": "https://pixelpoint.io/aval",
       "sourceUrl": "https://github.com/aquinomartins/aval",
-      "updatedAt": "2026-07-16T17:24:59Z",
+      "updatedAt": "2026-07-16T17:40:51Z",
       "isFork": true
     },
     {
@@ -198,14 +198,14 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/peabiru",
-      "updatedAt": "2026-06-25T14:27:57Z",
+      "updatedAt": "2026-06-25T14:28:52Z",
       "isFork": false
     },
     {
       "id": "Nuvens-Holandesas",
       "name": "Nuvens Holandesas",
       "title": "Nuvens Holandesas",
-      "description": "Obra interativa em rede na qual visitantes acessam um app pelo celular e participam da construção de uma paisagem atmosférica projetada em tempo real. Inspirada na função espacial das nuvens na pin…",
+      "description": "Obra interativa em rede na qual visitantes acessam um app pelo celular e participam da construção de uma paisagem atmosférica projetada em tempo real. Inspirada na função espacial das nuvens na pintura holandesa do século XVII.",
       "category": "Arte & criação",
       "art": "art",
       "tags": [
@@ -220,7 +220,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/Nuvens-Holandesas",
-      "updatedAt": "2026-06-24T12:40:21Z",
+      "updatedAt": "2026-06-24T12:40:25Z",
       "isFork": false
     },
     {
@@ -242,14 +242,14 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/correria",
-      "updatedAt": "2026-06-24T05:44:21Z",
+      "updatedAt": "2026-06-24T05:44:25Z",
       "isFork": false
     },
     {
       "id": "magnificahumanitas",
       "name": "Magnificahumanitas",
       "title": "magnificahumanitas",
-      "description": "O projeto investiga como sistemas de regras, incentivos, interfaces e protocolos digitais estruturam formas de participação coletiva. À luz da Magnifica Humanitas, essa investigação será orientada …",
+      "description": "O projeto investiga como sistemas de regras, incentivos, interfaces e protocolos digitais estruturam formas de participação coletiva. À luz da Magnifica Humanitas, essa investigação será orientada pela dignidade da pessoa humana, pelo bem comum, pela justiça social, pela subsidiariedade e pela solidariedade.",
       "category": "Arte & criação",
       "art": "art",
       "tags": [
@@ -264,7 +264,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/magnificahumanitas",
-      "updatedAt": "2026-05-28T10:20:52Z",
+      "updatedAt": "2026-05-28T10:20:57Z",
       "isFork": false
     },
     {
@@ -286,7 +286,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/articraft",
-      "updatedAt": "2026-05-15T14:59:57Z",
+      "updatedAt": "2026-05-16T14:38:23Z",
       "isFork": true
     },
     {
@@ -306,9 +306,9 @@
         "Acompanhar o desenvolvimento no repositório"
       ],
       "featured": false,
-      "homepage": null,
+      "homepage": "https://cell-architecture-studio-inky.vercel.app/",
       "sourceUrl": "https://github.com/aquinomartins/cell-architecture-studio",
-      "updatedAt": "2026-05-12T01:07:17Z",
+      "updatedAt": "2026-05-12T01:07:23Z",
       "isFork": true
     },
     {
@@ -330,14 +330,14 @@
       "featured": true,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/3DCellForge",
-      "updatedAt": "2026-05-10T12:17:40Z",
+      "updatedAt": "2026-05-10T14:20:21Z",
       "isFork": true
     },
     {
       "id": "aquinux",
       "name": "Aquinux",
       "title": "aquinux",
-      "description": "",
+      "description": "Uma nova ideia no laboratório. Explore o projeto e acompanhe sua evolução.",
       "category": "Tecnologia",
       "art": "code",
       "tags": [
@@ -352,7 +352,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/aquinux",
-      "updatedAt": "2026-02-17T02:46:45Z",
+      "updatedAt": "2026-02-17T02:46:49Z",
       "isFork": false
     },
     {
@@ -374,14 +374,14 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/colegioModeloCMSS",
-      "updatedAt": "2026-02-08T02:58:31Z",
+      "updatedAt": "2026-02-08T02:58:35Z",
       "isFork": false
     },
     {
       "id": "distribuido",
       "name": "Distribuido",
       "title": "distribuido",
-      "description": "",
+      "description": "Uma nova ideia no laboratório. Explore o projeto e acompanhe sua evolução.",
       "category": "Tecnologia",
       "art": "code",
       "tags": [
@@ -396,7 +396,7 @@
       "featured": false,
       "homepage": null,
       "sourceUrl": "https://github.com/aquinomartins/distribuido",
-      "updatedAt": "2025-12-01T20:44:38Z",
+      "updatedAt": "2025-12-01T20:44:43Z",
       "isFork": false
     }
   ]
