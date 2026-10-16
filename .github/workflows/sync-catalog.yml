@@ -1,0 +1,31 @@
+name: Atualizar catálogo de projetos
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: catalog-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Descobrir repositórios públicos
+        run: npm run sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Salvar catálogo atualizado
+        run: |
+          if ! git diff --quiet -- public/data/repositories.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/data/repositories.json
+            git commit -m "Atualiza catálogo público do Ergastério"
+            git push
+          fi
