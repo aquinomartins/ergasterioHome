@@ -58,7 +58,7 @@ export function combineProjects(server, repositories, config, basePath = '/') {
   const base = basePath.endsWith('/') ? basePath : `${basePath}/`;
   const result = server.map((folder) => {
     const metadata = config.folders[folder.folder] ?? {};
-    const requested = folder.repository ?? metadata.repository;
+    const requested = folder.repository;
     const repo = repositories.find(
       (r) => canonical(r.id) === canonical(requested ?? folder.folder),
     );

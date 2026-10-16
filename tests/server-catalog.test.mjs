@@ -204,3 +204,29 @@ test('frontend rejeita índices inválidos ou caminhos que escapem da pasta', ()
     );
   assert.equal(validServerCatalog({ ...data, owner: 'outro' }, config.owner), false);
 });
+
+test('índice atualizado permite remover um vínculo antigo sem reconstruir a Home', () => {
+  const repositories = [
+    {
+      id: 'mecanismo-n-114',
+      category: 'Engenharia',
+      sourceUrl: 'https://github.com/aquinomartins/mecanismo-n-114',
+    },
+  ];
+  const projects = combineProjects(
+    [
+      {
+        folder: 'mecanismo',
+        name: 'Mecanismo',
+        description: 'Uma experiência',
+        repository: null,
+        entry: 'index.html',
+        published: true,
+      },
+    ],
+    repositories,
+    config,
+  );
+  assert.equal(projects[0].repository, null);
+  assert.equal(projects.filter((p) => p.source === 'github').length, 1);
+});
