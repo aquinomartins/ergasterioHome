@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { viteSingleFile } from 'vite-plugin-singlefile';
 
 // A mesma fonte alimenta o JSON público e o catálogo inicial embutido no bundle.
 // O módulo virtual evita duplicar arquivos ou importar assets de public/ como código.
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     {
       name: 'ergasterio-catalog-snapshot',
@@ -18,5 +19,9 @@ export default defineConfig({
         return `export default ${readFileSync(path, 'utf8')}`;
       },
     },
+    ...(mode === 'hosting' ? [viteSingleFile({ removeViteModuleLoader: true })] : []),
   ],
-});
+  build: {
+    outDir: mode === 'hosting' ? 'dist-hosting' : 'dist',
+  },
+}));

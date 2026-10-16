@@ -92,6 +92,32 @@ Pagamento, confirmação, acesso ao curso, regras comerciais e entrega devem est
 
 ## Publicação
 
+### Superdomínios / cPanel
+
+Para reduzir falhas de envio, referências a arquivos ausentes e conflitos com a pasta `assets` do site antigo, use o pacote com JavaScript, estilos e fontes incorporados ao HTML:
+
+```sh
+npm run package:hosting
+```
+
+O comando gera `artifacts/ergasterio-superdominios.zip`. Extraia seu conteúdo diretamente na pasta raiz do domínio no cPanel, depois de guardar uma cópia do `index.html` atual fora da pasta pública. A estrutura é `index.html`, `favicon.svg` e `data/repositories.json`. O ZIP define permissões 0644 para arquivos e 0755 para pastas.
+
+Esse `index.html` pode renderizar toda a Home mesmo quando a pasta `assets` está ausente. O catálogo inicial está embutido; o JSON local e o feed remoto continuam sendo usados para atualizar os projetos quando disponíveis. O pacote incorpora também o componente 3D e as fontes, aumentando o tamanho do HTML em troca de simplificar a publicação. O build padrão mantém os arquivos separados para hospedagens com deploy automatizado.
+
+O `index.html` da **raiz do repositório** é uma entrada de desenvolvimento e depende do Vite. Enviar esse arquivo diretamente para a hospedagem pode produzir uma página branca. Use o HTML gerado pelo comando de publicação ou o ZIP do workflow.
+
+O workflow **Gerar pacote para Superdomínios** executa após pushes para `main`, em pull requests e por acionamento manual. No GitHub, abra **Actions → Gerar pacote para Superdomínios → execução concluída → Artifacts → ergasterio-superdominios**. O download já contém os arquivos publicados na raiz do ZIP. Extraia o pacote gerado; não use **Code → Download ZIP**, que baixa o código-fonte.
+
+```sh
+npm run test:hosting
+```
+
+Essa verificação abre o build de hospedagem no navegador, bloqueia arquivos externos de script, estilo e fonte, e valida a renderização, busca, radar, laboratório e uso em celular sem atualização do catálogo.
+
+Se uma publicação continuar branca, abra os endereços de JS e CSS indicados no HTML e confira a resposta: 404 indica arquivo ausente; 403 pode indicar permissões ou regras de acesso; uma resposta HTML em lugar de JS/CSS pode indicar redirecionamento ou reescrita no `.htaccess`. Preserve as regras necessárias aos experimentos existentes e confira eventuais políticas de bloqueio de scripts do servidor antes de alterá-las.
+
+### Build com arquivos separados
+
 Execute `npm run build` e publique **o conteúdo de `dist/`**, incluindo `assets/`, `data/` e `favicon.svg`, na raiz desejada do site. A navegação usa âncoras e não exige regras de fallback de SPA.
 
 Para um subdiretório:
