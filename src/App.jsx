@@ -226,7 +226,10 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     loadCatalog({
-      localUrl: `${import.meta.env.BASE_URL}data/repositories.json`,
+      localUrl:
+        import.meta.env.MODE === 'hosting'
+          ? null
+          : `${import.meta.env.BASE_URL}data/repositories.json`,
       feedUrl: import.meta.env.DEV ? null : catalogConfig.catalogFeed,
       owner: catalogConfig.owner,
       signal: controller.signal,
@@ -285,11 +288,9 @@ export default function App() {
     setQuery('');
     setExpanded(value !== 'Todos os temas');
     setMenu(false);
-    document
-      .getElementById('explorar')
-      ?.scrollIntoView({
-        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
-      });
+    document.getElementById('explorar')?.scrollIntoView({
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
   };
   const savedProjects = catalog.projects.filter((p) => saved.includes(p.id));
   const openProject = (project) => setModal({ type: 'project', project });

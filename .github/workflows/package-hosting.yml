@@ -21,6 +21,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - name: Preparar navegador para verificar o HTML publicado
+        shell: bash
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install --with-deps chromium
+            node --input-type=module -e 'import { chromium } from "@playwright/test"; console.log("CHROMIUM_PATH=" + chromium.executablePath())' >> "$GITHUB_ENV"
+          fi
+      - run: npm run test:root
       - run: npm run package:hosting
       - uses: actions/upload-artifact@v4
         with:

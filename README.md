@@ -2,6 +2,8 @@
 
 Uma Home editorial para conectar arte, ciência, tecnologia e educação. Construída em React, Vite e Three.js; o resultado de produção é um site estático, sem necessidade de servidor Node na hospedagem.
 
+**O `index.html` da raiz já está compilado e pronto para hospedagem.** Ele incorpora a aplicação, estilos, fontes e ícone. O template de desenvolvimento fica em `development.html`; o Vite o utiliza automaticamente durante desenvolvimento e builds.
+
 ## Executar
 
 Requer Node.js 24.5 ou mais recente. O ambiente da nuvem já fornece Node 24.
@@ -100,19 +102,20 @@ Para reduzir falhas de envio, referências a arquivos ausentes e conflitos com a
 npm run package:hosting
 ```
 
-O comando gera `artifacts/ergasterio-superdominios.zip`. Extraia seu conteúdo diretamente na pasta raiz do domínio no cPanel, depois de guardar uma cópia do `index.html` atual fora da pasta pública. A estrutura é `index.html`, `favicon.svg` e `data/repositories.json`. O ZIP define permissões 0644 para arquivos e 0755 para pastas.
+O comando gera `artifacts/ergasterio-superdominios.zip` e atualiza também o `index.html` da raiz. Extraia o ZIP diretamente na pasta raiz do domínio no cPanel, depois de guardar uma cópia do HTML atual fora da pasta pública. A estrutura do pacote é `index.html`, `favicon.svg` e `data/repositories.json`; o ZIP define permissões 0644 para arquivos e 0755 para pastas. Também é possível enviar somente o `index.html` da raiz, inclusive a partir do checkout Git do cPanel: ele contém tudo o que a Home precisa para abrir.
 
-Esse `index.html` pode renderizar toda a Home mesmo quando a pasta `assets` está ausente. O catálogo inicial está embutido; o JSON local e o feed remoto continuam sendo usados para atualizar os projetos quando disponíveis. O pacote incorpora também o componente 3D e as fontes, aumentando o tamanho do HTML em troca de simplificar a publicação. O build padrão mantém os arquivos separados para hospedagens com deploy automatizado.
+Esse `index.html` pode renderizar toda a Home mesmo quando a pasta `assets` está ausente. O catálogo inicial está embutido; a versão de hospedagem consulta diretamente o feed público do GitHub para atualizações e não exige o JSON local. O pacote incorpora também o componente 3D e as fontes, aumentando o tamanho do HTML em troca de simplificar a publicação. O build padrão mantém os arquivos separados para hospedagens com deploy automatizado.
 
-O `index.html` da **raiz do repositório** é uma entrada de desenvolvimento e depende do Vite. Enviar esse arquivo diretamente para a hospedagem pode produzir uma página branca. Use o HTML gerado pelo comando de publicação ou o ZIP do workflow.
+Edite `development.html` e `src/` para desenvolver. Após alterar a interface, execute `npm run package:hosting` e inclua o `index.html` regenerado no commit. Esse HTML gerado não deve ser editado manualmente. O Vite sempre utiliza o template de desenvolvimento antes de compilar, evitando compilar a saída gerada outra vez.
 
-O workflow **Gerar pacote para Superdomínios** executa após pushes para `main`, em pull requests e por acionamento manual. No GitHub, abra **Actions → Gerar pacote para Superdomínios → execução concluída → Artifacts → ergasterio-superdominios**. O download já contém os arquivos publicados na raiz do ZIP. Extraia o pacote gerado; não use **Code → Download ZIP**, que baixa o código-fonte.
+O workflow **Gerar pacote para Superdomínios** executa após pushes para `main`, em pull requests e por acionamento manual. Ele testa o `index.html` versionado em um servidor estático, sem Vite nem arquivos de apoio. No GitHub, abra **Actions → Gerar pacote para Superdomínios → execução concluída → Artifacts → ergasterio-superdominios**. O download contém somente os arquivos de publicação. O ZIP de **Code → Download ZIP** inclui também os fontes; seu `index.html` da raiz agora também está pronto para servir a Home.
 
 ```sh
 npm run test:hosting
+npm run test:root
 ```
 
-Essa verificação abre o build de hospedagem no navegador, bloqueia arquivos externos de script, estilo e fonte, e valida a renderização, busca, radar, laboratório e uso em celular sem atualização do catálogo.
+Essas verificações abrem tanto o build de hospedagem quanto o HTML versionado em um servidor estático que serve apenas esse arquivo. Elas bloqueiam scripts, estilos e fontes externos e validam renderização, busca, radar, laboratório e uso em celular sem atualização do catálogo.
 
 Se uma publicação continuar branca, abra os endereços de JS e CSS indicados no HTML e confira a resposta: 404 indica arquivo ausente; 403 pode indicar permissões ou regras de acesso; uma resposta HTML em lugar de JS/CSS pode indicar redirecionamento ou reescrita no `.htaccess`. Preserve as regras necessárias aos experimentos existentes e confira eventuais políticas de bloqueio de scripts do servidor antes de alterá-las.
 
@@ -132,6 +135,8 @@ O projeto não foi publicado em `ergasterio.com.br` durante esta implementação
 
 ```text
 config/                     Curadoria de projetos e ofertas
+index.html                  Home compilada, pronta para servir diretamente
+development.html            Template usado pelo Vite em desenvolvimento e build
 public/data/                Catálogo público gerado
 scripts/sync-repositories.mjs Descoberta e sincronização
 src/App.jsx                 Home, catálogo, trilhas e diálogos

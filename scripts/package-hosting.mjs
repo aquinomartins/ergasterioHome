@@ -30,5 +30,7 @@ if (!contents['index.html'] || !contents['data/repositories.json']) {
 }
 await mkdir(targetDir, { recursive: true });
 await writeFile(target, archive);
+await writeFile(new URL('../index.html', import.meta.url), html);
 console.log(`Pacote de publicação: ${fileURLToPath(target)} (${archive.length} bytes)`);
+console.log('index.html da raiz atualizado e pronto para envio direto à hospedagem.');
 console.log('JavaScript, estilos e fontes incorporados ao index.html; permissões ZIP: 0644/0755.');
