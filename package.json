@@ -13,10 +13,11 @@
     "sync": "node --use-env-proxy --use-system-ca scripts/sync-repositories.mjs",
     "test": "node --test tests/catalog.test.mjs",
     "test:e2e": "playwright test",
-    "format": "prettier --write src scripts tests config index.html playwright*.config.js vite.config.js package.json README.md .github/workflows/*.yml",
+    "format": "prettier --write src scripts tests config development.html playwright*.config.js vite.config.js package.json README.md .github/workflows/*.yml",
     "build:hosting": "vite build --mode hosting",
     "package:hosting": "npm run build:hosting && node scripts/package-hosting.mjs",
-    "test:hosting": "npm run build:hosting && playwright test --config playwright.hosting.config.js"
+    "test:hosting": "npm run build:hosting && playwright test --config playwright.hosting.config.js",
+    "test:root": "playwright test --config playwright.root.config.js"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "5.3.0",
