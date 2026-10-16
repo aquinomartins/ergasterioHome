@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "owner": "aquinomartins",
+  "excludedFolders": [
+    "assets",
+    "config",
+    "public",
+    "scripts",
+    "src",
+    "tests",
+    "server",
+    "vendor",
+    "node_modules",
+    "dist",
+    "dist-hosting",
+    "artifacts",
+    "data",
+    "api",
+    "auth",
+    "admin",
+    "uploads",
+    "storage",
+    "cache",
+    "logs",
+    "cgi-bin"
+  ],
+  "folders": {
+    "andante": {
+      "name": "Andante",
+      "description": "Um gesto, um caminho. Explore movimento, ritmo e interação.",
+      "category": "Arte & criação",
+      "icon": "motion",
+      "repository": "andante",
+      "featured": true
+    },
+    "celulas": {
+      "name": "Universo celular",
+      "description": "Uma aproximação visual ao pequeno universo que compõe a vida.",
+      "category": "Ciência",
+      "icon": "cell"
+    },
+    "correria": {
+      "name": "Correria",
+      "description": "Personagens, multidões e novas formas de participar de uma obra.",
+      "category": "Arte & criação",
+      "icon": "people",
+      "repository": "correria"
+    },
+    "dashboard": {
+      "name": "Bachianash Studio",
+      "description": "Um painel de desenho para experimentar sistemas e criação coletiva.",
+      "category": "Arte & criação",
+      "icon": "drawing",
+      "repository": "bachianash"
+    },
+    "ergasterio": {
+      "name": "Ergastério São Lucas",
+      "description": "Um laboratório de ideias, participação e experimentação.",
+      "category": "Sociedade",
+      "icon": "network",
+      "repository": "ergasteriux"
+    },
+    "fusca_engine_demo": {
+      "name": "Motor do Fusca",
+      "description": "Descubra o funcionamento de um motor em uma experiência educativa.",
+      "category": "Engenharia",
+      "icon": "engine",
+      "featured": true
+    },
+    "jetstream_demo": {
+      "name": "JetStream · Original",
+      "description": "Explore uma turbina e suas conexões com o movimento.",
+      "category": "Engenharia",
+      "icon": "turbine"
+    },
+    "jetstream_demo_fixed": {
+      "name": "JetStream · Revisado",
+      "description": "Outra versão do laboratório interativo de turbinas.",
+      "category": "Engenharia",
+      "icon": "turbine"
+    },
+    "jetstream_demo_v2": {
+      "name": "JetStream · V2",
+      "description": "Uma nova perspectiva sobre a mecânica das turbinas.",
+      "category": "Engenharia",
+      "icon": "turbine"
+    },
+    "mecanismo": {
+      "name": "Mecanismo 114",
+      "description": "Da rotação ao movimento alternado: uma experiência de cinemática.",
+      "category": "Engenharia",
+      "icon": "mechanism",
+      "repository": "mecanismo-n-114"
+    },
+    "mecanismo114": {
+      "name": "Mecanismo 114 · Estudo",
+      "description": "Investigue as relações entre peças, trajetórias e movimento.",
+      "category": "Engenharia",
+      "icon": "mechanism",
+      "repository": "mecanismo-n-114"
+    },
+    "moinho": {
+      "name": "Moinho hidráulico",
+      "description": "Água, energia e movimento em um mecanismo para explorar.",
+      "category": "Engenharia",
+      "icon": "wind"
+    },
+    "nuvens": {
+      "name": "Nuvens Holandesas",
+      "description": "Uma paisagem atmosférica construída pela participação coletiva.",
+      "category": "Arte & criação",
+      "icon": "cloud",
+      "repository": "Nuvens-Holandesas",
+      "preparing": true
+    },
+    "porsche_flat6_demo": {
+      "name": "Porsche Flat-Six",
+      "description": "Entre na arquitetura de um motor de seis cilindros opostos.",
+      "category": "Engenharia",
+      "icon": "engine"
+    },
+    "relogio": {
+      "name": "Relógio Turquesa",
+      "description": "A precisão do tempo em uma composição visual interativa.",
+      "category": "Engenharia",
+      "icon": "clock",
+      "repository": "relogio",
+      "featured": true
+    },
+    "sonic": {
+      "name": "Sonic · Clássico",
+      "description": "Um convite a jogar, explorar e descobrir interações.",
+      "category": "Jogos",
+      "icon": "game"
+    },
+    "sonic2": {
+      "name": "Sonic · Experimento 2",
+      "description": "Novos caminhos para um experimento com jogos na web.",
+      "category": "Jogos",
+      "icon": "game"
+    }
+  }
+}

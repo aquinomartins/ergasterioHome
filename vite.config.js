@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, copyFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 
@@ -8,7 +8,7 @@ const template = fileURLToPath(new URL('./development.html', import.meta.url));
 
 // A mesma fonte alimenta o JSON público e o catálogo inicial embutido no bundle.
 // O módulo virtual evita duplicar arquivos ou importar assets de public/ como código.
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, command }) => ({
   plugins: [
     {
       name: 'ergasterio-development-template',
@@ -51,6 +51,19 @@ export default defineConfig(({ mode }) => ({
         const path = fileURLToPath(new URL('./public/data/repositories.json', import.meta.url));
         this.addWatchFile(path);
         return `export default ${readFileSync(path, 'utf8')}`;
+      },
+    },
+    {
+      name: 'ergasterio-server-index',
+      closeBundle() {
+        if (command !== 'build') return;
+        const output = mode === 'hosting' ? 'dist-hosting' : 'dist';
+        for (const name of ['projects.php', 'ergasterio-projects.json']) {
+          copyFileSync(
+            new URL(`./${name}`, import.meta.url),
+            new URL(`./${output}/${name}`, import.meta.url),
+          );
+        }
       },
     },
     ...(mode === 'hosting' ? [viteSingleFile({ removeViteModuleLoader: true })] : []),

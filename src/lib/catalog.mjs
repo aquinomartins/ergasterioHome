@@ -2,6 +2,8 @@ export const categories = [
   'Todos os temas',
   'Ciência',
   'Arte & criação',
+  'Engenharia',
+  'Jogos',
   'Tecnologia',
   'Sociedade',
 ];
@@ -10,6 +12,9 @@ export function inferCategory(repo) {
   const text =
     `${repo.name} ${repo.description ?? ''} ${(repo.topics ?? []).join(' ')}`.toLowerCase();
   if (/cell|anatom|biolog|human-atlas|saúde|health|science/.test(text)) return 'Ciência';
+  if (/motor|engine|jetstream|turbina|mecanis|moinho|relogio|porsche/.test(text))
+    return 'Engenharia';
+  if (/sonic|game|jogo/.test(text)) return 'Jogos';
   if (/art|music|bach|design|cria|ninth|andante|nuvens/.test(text)) return 'Arte & criação';
   if (/mercado|socied|educa|colegio|humanitas|predit|peabiru/.test(text)) return 'Sociedade';
   return 'Tecnologia';
