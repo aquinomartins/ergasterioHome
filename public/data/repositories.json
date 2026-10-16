@@ -1,0 +1,403 @@
+{
+  "owner": "aquinomartins",
+  "syncedAt": "2026-10-16T05:35:23.356Z",
+  "source": "github-public-pages",
+  "projects": [
+    {
+      "id": "relogio",
+      "name": "Relogio",
+      "title": "relogio",
+      "description": "Relógio detalhado",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/relogio",
+      "updatedAt": "2026-10-15T14:46:28Z",
+      "isFork": false
+    },
+    {
+      "id": "andante",
+      "name": "Andante",
+      "title": "andante",
+      "description": "Animação interativa para web",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte & criação",
+        "TypeScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/andante",
+      "updatedAt": "2026-10-14T14:54:13Z",
+      "isFork": false
+    },
+    {
+      "id": "mecanismo-n-114",
+      "name": "Mecanismo N 114",
+      "title": "mecanismo n 114",
+      "description": "Rotação uniforme convertida em translação alternada, com engate conjugado em cada curso",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "PHP"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/mecanismo-n-114",
+      "updatedAt": "2026-10-02T18:30:42Z",
+      "isFork": false
+    },
+    {
+      "id": "design-language-website",
+      "name": "Design Language Website",
+      "title": "design language website",
+      "description": "IBM Design Language website",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte & criação",
+        "CSS"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/design-language-website",
+      "updatedAt": "2026-09-13T23:16:51Z",
+      "isFork": true
+    },
+    {
+      "id": "human-atlas",
+      "name": "Human Atlas",
+      "title": "Um universo dentro de você.",
+      "description": "Explore o corpo humano em 3D. Camada por camada, uma nova descoberta.",
+      "category": "Ciência",
+      "art": "anatomy",
+      "tags": [
+        "Anatomia",
+        "3D interativo"
+      ],
+      "objectives": [
+        "Reconhecer os sistemas do corpo humano",
+        "Isolar estruturas e observar suas relações",
+        "Investigar anatomia em uma experiência 3D"
+      ],
+      "featured": true,
+      "homepage": "https://human-atlas-seven.vercel.app/",
+      "sourceUrl": "https://github.com/aquinomartins/human-atlas",
+      "updatedAt": "2026-09-06T23:35:06Z",
+      "isFork": true
+    },
+    {
+      "id": "bachianash",
+      "name": "Bachianash",
+      "title": "Novas formas de ouvir.",
+      "description": "Um laboratório de encontros entre música, criação e tecnologia.",
+      "category": "Arte & criação",
+      "art": "sound",
+      "tags": [
+        "Música",
+        "Experimentação"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/bachianash",
+      "updatedAt": "2026-08-08T20:11:59Z",
+      "isFork": false
+    },
+    {
+      "id": "theninthart_OFICIAL",
+      "name": "The Ninth Art",
+      "title": "O tempo também é uma arte.",
+      "description": "Uma experiência para sentir o tempo, conectar narrativas e ampliar o olhar.",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte digital",
+        "Experiência"
+      ],
+      "objectives": [
+        "Explorar uma narrativa visual interativa",
+        "Refletir sobre tempo, percepção e criação",
+        "Conectar expressão artística e linguagem digital"
+      ],
+      "featured": true,
+      "homepage": "https://www.theninthart.com/",
+      "sourceUrl": "https://github.com/aquinomartins/theninthart_OFICIAL",
+      "updatedAt": "2026-07-21T02:09:59Z",
+      "isFork": false
+    },
+    {
+      "id": "aval",
+      "name": "Aval",
+      "title": "aval",
+      "description": "A new open-source format for interactive video on the web, with a built-in state machine, frame-accurate transitions, and packed-alpha transparency.",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "TypeScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/aval",
+      "updatedAt": "2026-07-16T17:24:59Z",
+      "isFork": true
+    },
+    {
+      "id": "peabiru",
+      "name": "Peabiru",
+      "title": "peabiru",
+      "description": "Peabiru : : aplicação web interativa para exposição presencial.",
+      "category": "Sociedade",
+      "art": "network",
+      "tags": [
+        "Sociedade",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/peabiru",
+      "updatedAt": "2026-06-25T14:27:57Z",
+      "isFork": false
+    },
+    {
+      "id": "Nuvens-Holandesas",
+      "name": "Nuvens Holandesas",
+      "title": "Nuvens Holandesas",
+      "description": "Obra interativa em rede na qual visitantes acessam um app pelo celular e participam da construção de uma paisagem atmosférica projetada em tempo real. Inspirada na função espacial das nuvens na pin…",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte & criação",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/Nuvens-Holandesas",
+      "updatedAt": "2026-06-24T12:40:21Z",
+      "isFork": false
+    },
+    {
+      "id": "correria",
+      "name": "Correria",
+      "title": "correria",
+      "description": "Aplicação web em JavaScript para obra interativa com personagens animados, tela de exposição, tela de participação e inserção dinâmica de figuras no fluxo visual.",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte & criação",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/correria",
+      "updatedAt": "2026-06-24T05:44:21Z",
+      "isFork": false
+    },
+    {
+      "id": "magnificahumanitas",
+      "name": "Magnificahumanitas",
+      "title": "magnificahumanitas",
+      "description": "O projeto investiga como sistemas de regras, incentivos, interfaces e protocolos digitais estruturam formas de participação coletiva. À luz da Magnifica Humanitas, essa investigação será orientada …",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Arte & criação",
+        "HTML"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/magnificahumanitas",
+      "updatedAt": "2026-05-28T10:20:52Z",
+      "isFork": false
+    },
+    {
+      "id": "articraft",
+      "name": "Articraft",
+      "title": "Ideias que ganham forma.",
+      "description": "Explore um projeto experimental na interseção entre arte e tecnologia.",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": [
+        "Criação",
+        "Laboratório"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/articraft",
+      "updatedAt": "2026-05-15T14:59:57Z",
+      "isFork": true
+    },
+    {
+      "id": "cell-architecture-studio",
+      "name": "Cell Architecture",
+      "title": "Arquiteturas da vida.",
+      "description": "Uma galeria interativa para investigar a arquitetura das células.",
+      "category": "Ciência",
+      "art": "cell",
+      "tags": [
+        "Biologia",
+        "Visualização"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/cell-architecture-studio",
+      "updatedAt": "2026-05-12T01:07:17Z",
+      "isFork": true
+    },
+    {
+      "id": "3DCellForge",
+      "name": "3D Cell Forge",
+      "title": "A vida, em outra dimensão.",
+      "description": "Entre no mundo das células e descubra a beleza das pequenas estruturas.",
+      "category": "Ciência",
+      "art": "cell",
+      "tags": [
+        "Biologia",
+        "Exploração 3D"
+      ],
+      "objectives": [
+        "Identificar organelas em modelos celulares",
+        "Relacionar estruturas e funções biológicas",
+        "Explorar modelos tridimensionais de células"
+      ],
+      "featured": true,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/3DCellForge",
+      "updatedAt": "2026-05-10T12:17:40Z",
+      "isFork": true
+    },
+    {
+      "id": "aquinux",
+      "name": "Aquinux",
+      "title": "aquinux",
+      "description": "",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/aquinux",
+      "updatedAt": "2026-02-17T02:46:45Z",
+      "isFork": false
+    },
+    {
+      "id": "colegioModeloCMSS",
+      "name": "ColegioModeloCMSS",
+      "title": "colegioModeloCMSS",
+      "description": "Página inicial do site www.colegiomodelocmss.com.br",
+      "category": "Sociedade",
+      "art": "network",
+      "tags": [
+        "Sociedade",
+        "CSS"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/colegioModeloCMSS",
+      "updatedAt": "2026-02-08T02:58:31Z",
+      "isFork": false
+    },
+    {
+      "id": "distribuido",
+      "name": "Distribuido",
+      "title": "distribuido",
+      "description": "",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "JavaScript"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/distribuido",
+      "updatedAt": "2025-12-01T20:44:38Z",
+      "isFork": false
+    }
+  ]
+}

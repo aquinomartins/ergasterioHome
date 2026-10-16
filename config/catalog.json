@@ -1,0 +1,119 @@
+{
+  "owner": "aquinomartins",
+  "excluded": [
+    "ergasterioHome",
+    "ergasterioLite",
+    "ergasteriux",
+    "querovendermeuimovel_2026",
+    "vendermeuimovel",
+    "piscina2027",
+    "piscinaAesthetica",
+    "theninthart",
+    "theninthart_INICIAL",
+    "theninthart_OFICIAL-Backup-",
+    "peabiru002",
+    "oftalmol",
+    "mercadoPreditivo",
+    "distribuidoFase4",
+    "homeAquino",
+    "GenCAD",
+    "meu-projeto",
+    "plataforma-portugues",
+    "EmbarcaTech",
+    "embarcatechAquino",
+    "django_livraria",
+    "ThinkPython",
+    "Python",
+    "ml-agents",
+    "fast",
+    "amplify-aquino-junho",
+    "comercial",
+    "desenhoart",
+    "Software-Engineering",
+    "amplify-full-stack",
+    "siteamplify",
+    "amplify-react-graphql",
+    "pagina",
+    "React-Landing-Page-Template",
+    "desenhoapp",
+    "The-Weirdos-NFT-Website-Starter-Code",
+    "graficoDinamico",
+    "bitcoincore",
+    "gpt3_fam",
+    "WebSockets_Ilhuicactlapaltlachia",
+    "HelloGithub",
+    "imagens",
+    "alicerce"
+  ],
+  "projects": {
+    "human-atlas": {
+      "title": "Um universo dentro de você.",
+      "name": "Human Atlas",
+      "description": "Explore o corpo humano em 3D. Camada por camada, uma nova descoberta.",
+      "category": "Ciência",
+      "art": "anatomy",
+      "featured": true,
+      "homepage": "https://human-atlas-seven.vercel.app",
+      "tags": ["Anatomia", "3D interativo"],
+      "objectives": [
+        "Reconhecer os sistemas do corpo humano",
+        "Isolar estruturas e observar suas relações",
+        "Investigar anatomia em uma experiência 3D"
+      ]
+    },
+    "3DCellForge": {
+      "title": "A vida, em outra dimensão.",
+      "name": "3D Cell Forge",
+      "description": "Entre no mundo das células e descubra a beleza das pequenas estruturas.",
+      "category": "Ciência",
+      "art": "cell",
+      "featured": true,
+      "tags": ["Biologia", "Exploração 3D"],
+      "objectives": [
+        "Identificar organelas em modelos celulares",
+        "Relacionar estruturas e funções biológicas",
+        "Explorar modelos tridimensionais de células"
+      ]
+    },
+    "theninthart_OFICIAL": {
+      "title": "O tempo também é uma arte.",
+      "name": "The Ninth Art",
+      "description": "Uma experiência para sentir o tempo, conectar narrativas e ampliar o olhar.",
+      "category": "Arte & criação",
+      "art": "art",
+      "featured": true,
+      "homepage": "https://www.theninthart.com",
+      "tags": ["Arte digital", "Experiência"],
+      "objectives": [
+        "Explorar uma narrativa visual interativa",
+        "Refletir sobre tempo, percepção e criação",
+        "Conectar expressão artística e linguagem digital"
+      ]
+    },
+    "cell-architecture-studio": {
+      "name": "Cell Architecture",
+      "title": "Arquiteturas da vida.",
+      "description": "Uma galeria interativa para investigar a arquitetura das células.",
+      "category": "Ciência",
+      "art": "cell",
+      "tags": ["Biologia", "Visualização"]
+    },
+    "bachianash": {
+      "name": "Bachianash",
+      "title": "Novas formas de ouvir.",
+      "description": "Um laboratório de encontros entre música, criação e tecnologia.",
+      "category": "Arte & criação",
+      "art": "sound",
+      "tags": ["Música", "Experimentação"]
+    },
+    "articraft": {
+      "name": "Articraft",
+      "title": "Ideias que ganham forma.",
+      "description": "Explore um projeto experimental na interseção entre arte e tecnologia.",
+      "category": "Arte & criação",
+      "art": "art",
+      "tags": ["Criação", "Laboratório"]
+    }
+  },
+  "catalogFeed": "https://raw.githubusercontent.com/aquinomartins/ergasterioHome/main/public/data/repositories.json"
+}

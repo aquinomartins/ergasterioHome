@@ -1,0 +1,22 @@
+[
+  {
+    "id": "visualizar-para-compreender",
+    "category": "CIÊNCIA",
+    "title": "Visualizar para compreender",
+    "description": "Corpo humano, biologia e ferramentas visuais para transformar conceitos em descobertas.",
+    "status": "coming_soon",
+    "priceInCents": null,
+    "currency": "BRL",
+    "checkoutUrl": null
+  },
+  {
+    "id": "da-ideia-a-experiencia",
+    "category": "ARTE & TECNOLOGIA",
+    "title": "Da ideia à experiência",
+    "description": "Linguagem visual, experimentação digital e criação de projetos interativos.",
+    "status": "coming_soon",
+    "priceInCents": null,
+    "currency": "BRL",
+    "checkoutUrl": null
+  }
+]
