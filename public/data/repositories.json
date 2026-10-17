@@ -1,6 +1,6 @@
 {
   "owner": "aquinomartins",
-  "syncedAt": "2026-10-16T14:02:48.022Z",
+  "syncedAt": "2026-10-17T10:45:14.993Z",
   "source": "github-api",
   "projects": [
     {
@@ -8,10 +8,10 @@
       "name": "Relogio",
       "title": "relogio",
       "description": "Relógio detalhado",
-      "category": "Tecnologia",
+      "category": "Engenharia",
       "art": "code",
       "tags": [
-        "Tecnologia",
+        "Engenharia",
         "JavaScript"
       ],
       "objectives": [
@@ -52,10 +52,10 @@
       "name": "Mecanismo N 114",
       "title": "mecanismo n 114",
       "description": "Rotação uniforme convertida em translação alternada, com engate conjugado em cada curso",
-      "category": "Tecnologia",
+      "category": "Engenharia",
       "art": "code",
       "tags": [
-        "Tecnologia",
+        "Engenharia",
         "PHP"
       ],
       "objectives": [
