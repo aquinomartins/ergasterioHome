@@ -1,8 +1,30 @@
 {
   "owner": "aquinomartins",
-  "syncedAt": "2026-10-30T12:56:48.673Z",
+  "syncedAt": "2026-10-31T12:30:35.666Z",
   "source": "github-api",
   "projects": [
+    {
+      "id": "huashu-bird-sticker",
+      "name": "Huashu Bird Sticker",
+      "title": "huashu bird sticker",
+      "description": "花叔开源的全球鸟类贴纸库 · Stickers for all 11,064 living bird species, with names in 43 languages and structured data",
+      "category": "Tecnologia",
+      "art": "code",
+      "tags": [
+        "Tecnologia",
+        "Projeto aberto"
+      ],
+      "objectives": [
+        "Conhecer a proposta do projeto",
+        "Investigar suas possibilidades",
+        "Acompanhar o desenvolvimento no repositório"
+      ],
+      "featured": false,
+      "homepage": null,
+      "sourceUrl": "https://github.com/aquinomartins/huashu-bird-sticker",
+      "updatedAt": "2026-10-30T23:09:37Z",
+      "isFork": true
+    },
     {
       "id": "relogio",
       "name": "Relogio",
